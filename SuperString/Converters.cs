@@ -105,6 +105,22 @@ namespace SuperString
             return defaultValue;
         }
 
+        public static IPAddress ToIPAddress(this string s, IPAddress defaultValue = default)
+        {
+            if (IPAddress.TryParse(s, out var result))
+                return result;
+
+            return defaultValue;
+        }
+
+        public static MailAddress ToMailAddress(this string s, MailAddress defaultValue = default)
+        {
+            if (MailAddress.TryCreate(s, out var result))
+                return result;
+
+            return defaultValue;
+        }
+
         public static sbyte ToSByte(this string s, sbyte defaultValue = default)
         {
             if (sbyte.TryParse(s, out var result))
@@ -132,22 +148,6 @@ namespace SuperString
         public static ulong ToUInt64(this string s, ulong defaultValue = default)
         {
             if (ulong.TryParse(s, out var result))
-                return result;
-
-            return defaultValue;
-        }
-
-        public static IPAddress ToIPAddress(this string s, IPAddress defaultValue = default)
-        {
-            if (IPAddress.TryParse(s, out var result))
-                return result;
-
-            return defaultValue;
-        }
-
-        public static MailAddress ToMailAddress(this string s, MailAddress defaultValue = default)
-        {
-            if (MailAddress.TryCreate(s, out var result))
                 return result;
 
             return defaultValue;
