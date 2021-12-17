@@ -1,0 +1,2 @@
+# SuperString
+ Handy string extensions
