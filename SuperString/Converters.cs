@@ -81,6 +81,14 @@ namespace SuperString
             return defaultValue;
         }
 
+        public static Guid ToGuid(this string s, Guid defaultValue = default)
+        {
+            if (Guid.TryParse(s, out var result))
+                return result;
+
+            return defaultValue;
+        }
+
         public static short ToInt16(this string s, short defaultValue = default)
         {
             if (short.TryParse(s, out var result))

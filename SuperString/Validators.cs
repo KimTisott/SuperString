@@ -32,6 +32,9 @@ namespace SuperString
         public static bool IsFloat(this string s)
             => float.TryParse(s, out _);
 
+        public static bool IsGuid(this string s)
+            => Guid.TryParse(s, out _);
+
         public static bool IsInt16(this string s)
             => short.TryParse(s, out _);
 
@@ -64,18 +67,6 @@ namespace SuperString
         public static bool IsUpper(this string s)
             => s == s.ToUpper();
 
-        public static bool IsInCollection(this string s, IEnumerable<string> e)
-        {
-            if (e == null)
-                return false;
-
-            foreach (var str in e)
-                if (str == s)
-                    return true;
-
-            return false;
-        }
-
         public static bool IsAlpha(this string s)
         {
             foreach (var c in s)
@@ -101,6 +92,18 @@ namespace SuperString
                     return false;
 
             return true;
+        }
+
+        public static bool IsInCollection(this string s, IEnumerable<string> e)
+        {
+            if (e == null)
+                return false;
+
+            foreach (var str in e)
+                if (str == s)
+                    return true;
+
+            return false;
         }
     }
 }

@@ -3,6 +3,9 @@
 
  ## Converters
 
+ - Naming template: 'To{Value}'
+ - Accept custom default values
+
  ### Type
 
 | Function      |
@@ -15,6 +18,7 @@
 | ToDouble      |
 | ToEnum        |
 | ToFloat       |
+| ToGuid        |
 | ToInt16       |
 | ToInt32       |
 | ToInt64       |
@@ -39,6 +43,7 @@
 | IsDouble      |
 | IsEnum        |
 | IsFloat       |
+| IsGuid        |
 | IsInt16       |
 | IsInt32       |
 | IsInt64       |
@@ -59,7 +64,7 @@
 | IsNumeric      |
 | IsUpper        |
 
-### List
+### Collection
 
 | Function       |
 | :------------- |
