@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Mail;
+using System.Text.Json;
 
 namespace SuperString
 {
@@ -46,6 +47,20 @@ namespace SuperString
 
         public static bool IsIPAddress(this string s)
             => IPAddress.TryParse(s, out _);
+
+        public static bool IsJSON(this string s, JsonDocumentOptions options = default)
+        {
+            try
+            {
+                JsonDocument.Parse(s, options);
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         public static bool IsMailAddress(this string s)
             => MailAddress.TryCreate(s, out _);
