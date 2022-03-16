@@ -48,6 +48,7 @@
 | IsInt32       |
 | IsInt64       |
 | IsIPAddress   |
+| IsJson        |
 | IsMailAddress |
 | IsSByte       |
 | IsUInt16      |
